@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
+import time, datetime
 import serial
-import time
 
 ser = serial.Serial(
         port = '/dev/ttyAMA0',
@@ -17,11 +17,9 @@ print(ser.name)
 
 #Grab data forever
 while True:
-    
     #Open the file here to write data out
     fd = open('datalogger.dat', 'w')
     
-
     #Send a "character" to serial to initialize data. Also track the time we recieve data back
     print("Start : %s" % time.ctime())
     ser.write('Start\n')
@@ -55,10 +53,11 @@ while True:
     #Write a new line after each data and date/time entry
     fd.write("\n")
     fd.close() 
-    exec(open("SQLite.py").read())
+    #exec(open("SQLite.py").read())
     #Wait a minute to repeat the loop
-    time.sleep(60)
+    time.sleep(1)
     print("End : %s" % time.ctime())
+    exec(open("SQLite.py").read())
     print
     print
     
