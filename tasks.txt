@@ -1,5 +1,6 @@
 Steps:
 	1: Use C, Perl, or Python to obtain sensor values and the date/time (DONE)
-	2: Get the data as well as date and time into a SQLite3 or MySQL database
+	2: Get the data as well as date and time into a SQLite3 or MySQL database (DONE)
 	3: Setup and run lighttpd or Apache2 to run the program at boot
 	4: ENSURE INTERNET
+	5: Get the data into CHART JS
